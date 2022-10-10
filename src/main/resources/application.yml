@@ -6,7 +6,7 @@ eureka:
   client:
     service-url:
       #defaultZone: http://localhost:6060/eureka
-      defaultZone: http://63.250.55.150:6060/eureka
+      defaultZone: http://63.250.55.150:6060/
     fetch-registry: false
     register-with-eureka: false
 
