@@ -3,12 +3,21 @@ server:
   servlet:
     contextPath: /eureka
 eureka:
+  instance:
+    #hostname: localhost
+    hostname: 63.250.55.150
   client:
     service-url:
-      #defaultZone: http://localhost:6060/eureka
-      defaultZone: http://63.250.55.150:6060/eureka
-    fetch-registry: true
-    register-with-eureka: true
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    fetch-registry: false
+    register-with-eureka: false
 
-    #instance:
-    #hostname: localhost
+spring:
+  profiles:
+    active: dev
+  security:
+    basic:
+      enabled: true
+      #user:
+      #name: swipeuser
+      #password: swipepass
